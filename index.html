@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeatherSphere | Real-Time Dashboard</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-decor"></div>
+  
+  <main class="dashboard-wrapper">
+    <!-- Header -->
+    <header class="app-header">
+      <span class="badge">Live Forecast</span>
+      <h1>WeatherSphere</h1>
+      <p class="subtitle">Real-time weather data and 5-day forecasts with precision</p>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search-section">
+      <form id="weather-form" class="search-bar">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input 
+          type="text" 
+          id="city-input" 
+          placeholder="Search city (e.g., Pune, Mumbai, London)..." 
+          autocomplete="off"
+        />
+        <button type="submit" id="search-btn">
+          <span>Search</span>
+        </button>
+      </form>
+      <div id="status-message" class="status-msg"></div>
+    </section>
+
+    <!-- Main Content Area -->
+    <div class="content-container">
+      <!-- Current Weather Hero Card -->
+      <article id="current-weather" class="glass-card current-card hidden">
+        <div class="current-top">
+          <div>
+            <h2 id="city-name" class="city-title">--</h2>
+            <p id="current-date" class="date-text">--</p>
+          </div>
+          <span id="current-badge" class="condition-badge">--</span>
+        </div>
+        
+        <div class="current-center">
+          <div class="temp-display">
+            <span id="current-temp" class="main-temp">--</span>
+            <span class="unit">°C</span>
+          </div>
+          <div class="condition-details">
+            <p id="current-condition" class="condition-main">--</p>
+            <p class="forecast-hint">Next 5 days outlook below</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5-Day Forecast Grid -->
+      <section id="forecast-section" class="forecast-section hidden">
+        <h3 class="section-title">5-Day Outlook</h3>
+        <div id="forecast-container" class="forecast-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
